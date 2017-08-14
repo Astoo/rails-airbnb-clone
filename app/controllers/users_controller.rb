@@ -5,6 +5,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    @user.update(params[:user])
   end
 
   def new
