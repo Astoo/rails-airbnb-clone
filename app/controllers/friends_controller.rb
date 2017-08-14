@@ -1,4 +1,7 @@
 class FriendsController < ApplicationController
+  def index
+    @friends = Friends.all
+  end
 
   def show
   end
