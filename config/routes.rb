@@ -1,19 +1,8 @@
 Rails.application.routes.draw do
-  get 'friends/show'
-
-  get 'friends/new'
-
-  get 'users/show'
-
-  get 'users/update'
-
-  get 'users/new'
-
-  get 'bookings/show'
-  
-  get 'reviews/show'
-
-  get 'reviews/new'
+  resources :bookings
+  resources :users
+  resources :friends
+  resources :reviews
 
   devise_for :users
   root to: 'pages#home'
