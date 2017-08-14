@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  before_action :set_cocktail, only: [:show, :update, :destroy]
+
   def show
   end
 
@@ -12,5 +14,11 @@ class BookingsController < ApplicationController
   end
 
   def new
+  end
+
+  private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end
