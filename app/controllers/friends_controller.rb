@@ -1,9 +1,12 @@
 class FriendsController < ApplicationController
+
+  before_action :set_friend, only: [:show, :update, :destroy]
   def index
     @friends = Friends.all
   end
-
+  
   def show
+
   end
 
   def new
@@ -16,6 +19,12 @@ class FriendsController < ApplicationController
   end
 
   def delete
+  end
+
+  private
+
+  def set_cocktail
+    @friend = Friend.find(params[:id])
   end
 
 end
