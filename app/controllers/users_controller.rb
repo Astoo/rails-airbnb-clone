@@ -13,10 +13,20 @@ class UsersController < ApplicationController
 
 
   def create
-
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to user_path(@user), notice: 'Bienvenue sur la location de potes ! :)'
+    else
+      render :new
+    end
   end
 
   def delete
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password)
+  end
 end
