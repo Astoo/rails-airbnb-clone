@@ -19,9 +19,11 @@ puts "finished seeding activities"
 def activity
   rand(1..6)
 end
+
 def user
-rand(1..150)
+  rand(1..150)
 end
+
 def friend
   rand(1..75)
 end
@@ -32,9 +34,9 @@ puts "now seeding friends"
 end
 puts "finished with the friends"
 puts "now creating reviews"
-# creating 100 reviews with user and friend id, comment and rating.
 100.times do
   Review.create(friend_id: friend , user_id: user ,comment:"#{Faker::FamilyGuy.quote}",rating:"#{rand(0..5)}")
+end
 puts "finished seeding reviews"
 puts "creating bookings"
 #creating 100 bookings with a random status, a user_id , a friend_id , a date, a random start and end date.
@@ -45,7 +47,7 @@ def bookingstatus
 end
 # WILL RUN INTO ISSUES WITH START AND END DATE NOT BEING RELATED. TODO
 100.times do
-Booking.create(friend_id: friend, user_id: user , status: bookingstatus, date: "#{Faker::Date}", start_date: "#{Faker::Date}", end_date: "#{Faker::Date}")
+  Booking.create(friend_id: friend, user_id: user , status: bookingstatus, date: "#{Faker::Date}", start_date: "#{Faker::Date}", end_date: "#{Faker::Date}")
 end
 puts "finished adding bookings"
 puts " FINISHED SPREADIN MY SEED!!!"
