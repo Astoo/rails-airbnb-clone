@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814123724) do
+ActiveRecord::Schema.define(version: 20170814140348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "attachinary_files", force: :cascade do |t|
     t.string "attachinariable_type"
@@ -30,6 +36,44 @@ ActiveRecord::Schema.define(version: 20170814123724) do
     t.index ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "friend_id"
+    t.string "status"
+    t.string "date"
+    t.string "start_date"
+    t.string "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_bookings_on_friend_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "friends", force: :cascade do |t|
+    t.string "avatar"
+    t.text "description"
+    t.string "price"
+    t.string "name"
+    t.string "pictures"
+    t.bigint "user_id"
+    t.bigint "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_friends_on_activity_id"
+    t.index ["user_id"], name: "index_friends_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.string "rating"
+    t.bigint "user_id"
+    t.bigint "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_reviews_on_friend_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -43,8 +87,16 @@ ActiveRecord::Schema.define(version: 20170814123724) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "friends"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "friends", "activities"
+  add_foreign_key "friends", "users"
+  add_foreign_key "reviews", "friends"
+  add_foreign_key "reviews", "users"
 end
