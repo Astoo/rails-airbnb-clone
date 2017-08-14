@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
+  resources :bookings
+  resources :users
   resources :friends
+  resources :reviews
 
   devise_for :users
   root to: 'pages#home'
