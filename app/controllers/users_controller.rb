@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
 
   def show
-    @users = User.all
+    @user = User.find(params[:id])
   end
 
   def update
   end
 
   def new
+    @user = User.new
   end
 
 
   def create
+
   end
 
   def delete
