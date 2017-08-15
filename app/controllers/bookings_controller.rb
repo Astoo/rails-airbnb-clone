@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy]
 
   def show
+    @booking = Booking.find(params[:id])
   end
 
   def delete
