@@ -1,9 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:new, :create]
 
-  def show
-  end
-
   def new
   end
 
