@@ -26,6 +26,9 @@ class FriendsController < ApplicationController
   end
 
   def update
+    @friend.update(friend_params)
+
+    redirect_to friend_path(@friend)
   end
 
   private
