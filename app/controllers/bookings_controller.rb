@@ -2,11 +2,9 @@ class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy]
   before_action :init_friend, only: [:new, :create]
 
-  # à vérifier (pourrait partir de @user ?)
   def new
-    @booking = @friend.bookings.build
+    @booking = Booking.new
   end
-  # fin de la vérif
 
   def show
   end
@@ -21,7 +19,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = @friend.bookings.build(booking_params)
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    @booking.friend = @friend
     if @booking.save
       redirect_to booking_path(@booking)
     else
@@ -40,6 +40,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:description, :ingredient_id)
+    params.require(:booking).permit(:status, :date)
+     #:start_date, :end_date to be added
   end
 end
