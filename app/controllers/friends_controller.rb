@@ -13,7 +13,7 @@ class FriendsController < ApplicationController
   end
 
   def create
-    @friend = Friend.new(friend_params)
+    @friend = Friend.new(friends_params)
     if @friend.save
       redirect_to friend_path(@friend)
     else
@@ -26,7 +26,7 @@ class FriendsController < ApplicationController
   end
 
   def update
-    @friend.update(friend_params)
+    @friend.update(friends_params)
 
     redirect_to friend_path(@friend)
   end
