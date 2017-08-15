@@ -8,11 +8,14 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+</style>
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= yield %>
-    <%= javascript_include_tag 'application' %>
     <%= render 'shared/footer'%>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
