@@ -6,7 +6,6 @@ class FriendsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -14,18 +13,28 @@ class FriendsController < ApplicationController
   end
 
   def create
-  end
-
-  def update
+    @friend = Friend.new(friend_params)
+    if @friend.save
+      redirect_to friend_path(@friend)
+    else
+      render :new
   end
 
   def destroy
+    @friend.destroy
   end
-
+    
+  def update
+  end
+    
   private
 
   def set_friend
     @friend = Friend.find(params[:id])
+  end
+
+  def friends_params
+    params.require(:friend).permit(:name, :avatar, :user_id, :activity)
   end
 
 end
