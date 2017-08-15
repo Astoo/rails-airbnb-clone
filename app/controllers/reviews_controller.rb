@@ -8,6 +8,6 @@ class ReviewsController < ApplicationController
   def create
   end
 
-  def delete
+  def destroy
   end
 end
