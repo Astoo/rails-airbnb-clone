@@ -8,9 +8,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  end
-
-  def delete
+    @review = Review.new(review_params)
+    @review.friend = @friend
+    if @review.save
+      redirect_to friend_path(@friend)
+    else
+      render :new
+    end
   end
 
   private
