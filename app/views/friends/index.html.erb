@@ -1,6 +1,14 @@
-<h1>this is the temp index of friends</h1>
-<% @friends.all.each do |friend| %>
-  <p><%= link_to friend.name, friend_path(friend) %></p>
-  <p>owned by <%= friend.user.name%></p>
-  <p><%= friend.price %></p>
-<%end%>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
+      <h1>this is the temp index of friends</h1>
+    </div>
+  </div>
+  <div class="row">
+    <% @friends.all.each do |friend| %>
+      <div class="col-xs-12 col-sm-3">
+        <%= render "card", friend: friend %>
+      </div>
+    <% end %>
+  </div>
+</div>
