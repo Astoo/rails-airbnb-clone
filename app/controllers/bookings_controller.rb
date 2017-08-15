@@ -11,7 +11,10 @@ class BookingsController < ApplicationController
   def show
   end
 
-  def delete
+  def destroy
+    booking = Booking.find(params[:id])
+    booking.destroy
+    redirect_to friend_path(booking.friend)
   end
 
   def update
