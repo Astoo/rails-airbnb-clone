@@ -1,4 +1,10 @@
 <h1><%= @friend.name%>'s profile</h1>
 <%= image_tag("#{@friend.avatar}") %>
 <p>owner: <%=@friend.user.name%></p>
-<P>price: <%=@friend.price%>€</P>
+<p>price: <%=@friend.price%>€</p>
+<% @friend.reviews.each do |review| %>
+<p>rating: <%=review.rating%> <%=review.comment%><p>
+<p>review by: <%=review.user.name%><p>
+
+<% end %>
+
