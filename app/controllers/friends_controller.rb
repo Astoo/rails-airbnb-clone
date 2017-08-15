@@ -6,7 +6,6 @@ class FriendsController < ApplicationController
   end
 
   def show
-    @friend = Friend.find(params[:id])
   end
 
   def new
@@ -34,7 +33,7 @@ class FriendsController < ApplicationController
     @friend = Friend.find(params[:id])
   end
 
-  def cocktail_params
+  def friends_params
     params.require(:friend).permit(:name, :avatar, :user_id, :activity)
   end
 
