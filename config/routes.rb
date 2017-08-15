@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :bookings
   resources :users
   resources :friends do
     resources :reviews
+    resources :bookings
   end
   resources :reviews
+  resources :bookings
 
   devise_for :users
   root to: 'friends#index'
