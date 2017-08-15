@@ -18,15 +18,16 @@ class FriendsController < ApplicationController
       redirect_to friend_path(@friend)
     else
       render :new
+    end
   end
 
   def destroy
     @friend.destroy
   end
-    
+
   def update
   end
-    
+
   private
 
   def set_friend

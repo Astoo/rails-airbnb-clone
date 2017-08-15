@@ -1,2 +1,4 @@
-<h1>Friends#show</h1>
-<p>Find me in app/views/friends/show.html.erb</p>
+<h1><%= @friend.name%>'s profile</h1>
+<%= image_tag("#{@friend.avatar}") %>
+<p>owner: <%=@friend.user.name%></p>
+<P>price: <%=@friend.price%>€</P>
