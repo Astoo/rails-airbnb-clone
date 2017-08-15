@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
   # fin de la vérif
 
   def show
-    @booking = Booking.find(params[:id])
   end
 
   def destroy
