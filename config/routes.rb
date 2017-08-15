@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :friends do
     resources :reviews
   end
+  resources :reviews
 
   devise_for :users
   root to: 'friends#index'
