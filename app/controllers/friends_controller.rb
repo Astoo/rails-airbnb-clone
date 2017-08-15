@@ -4,27 +4,38 @@ class FriendsController < ApplicationController
   def index
     @friends = Friends.all
   end
-  
-  def show
 
+  def show
+    @friend = Friend.find(params[:id])
   end
 
   def new
+    @friend = Friend.new
   end
 
   def update
   end
 
   def create
+    @friend = Friend.new(friend_params)
+    if @friend.save
+      redirect_to friend_path(@friend)
+    else
+      render :new
   end
 
-  def delete
+  def destroy
+    @friend.destroy
   end
 
   private
 
-  def set_cocktail
+  def set_friend
     @friend = Friend.find(params[:id])
+  end
+
+  def cocktail_params
+    params.require(:friend).permit(:name, :avatar, :user_id, :activity)
   end
 
 end
