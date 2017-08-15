@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :update, :destroy]
 
+  def new
+    @booking = @friend.bookings.build
+  end
+
   def show
     @booking = Booking.find(params[:id])
   end
@@ -12,9 +16,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-  end
-
-  def new
   end
 
   private
