@@ -23,8 +23,6 @@ class ReviewsController < ApplicationController
     @friend = Friend.find(params[:friend_id])
   end
 
-  def destroy
-
   def review_params
     params.require(:review).permit(:comment, :rating)
   end
