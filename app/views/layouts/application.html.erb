@@ -3,13 +3,19 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TODO</title>
+    <! looking for potos />
+    <title>LFP</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+</style>
   </head>
   <body>
+    <%= render 'shared/navbar' %>
     <%= yield %>
+    <%= render 'shared/footer'%>
     <%= javascript_include_tag 'application' %>
   </body>
 </html>
