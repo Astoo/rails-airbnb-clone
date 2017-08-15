@@ -1,0 +1,35 @@
+<% i = 0 %>
+<% rating = 0 %>
+<% Review.where("friend_id = ?", friend.id).find_each do |review| %>
+<% rating += review.rating.to_i %>
+<% i += 1 %>
+<% end %>
+<% if i > 0 %>
+<% rating = rating/i %>
+<% end %>
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card-name">
+    <h4><%= link_to friend.name, friend_path(friend) %></h4>
+    <p> owned by <%= friend.user.name%></p>
+  </div>
+  <div class="card-description">
+    <p><%=friend.price%></p>
+  </div>
+  <div class="card-user">
+   <%= image_tag friend.avatar %>
+  </div>
+  <div class="card-distance">
+    <p> 3km </p>
+  </div>
+  <div class="card-rating">
+    <% if rating > 0 %>
+      <%= rating %>
+    <% end %>
+    <!-- mettre un else plus tard pour griser les étoiles  -->
+  </div>
+</div>
+
+
+
+

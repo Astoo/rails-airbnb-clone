@@ -9,12 +9,14 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <style>
-@import url('https://fonts.googleapis.com/css?family=Raleway:300');
-</style>
+      @import url('https://fonts.googleapis.com/css?family=Raleway:300');
+    </style>
   </head>
   <body>
     <%= render 'shared/navbar' %>
+
     <%= render 'shared/flashes' %>
+
     <%= yield %>
     <%= render 'shared/footer'%>
     <%= javascript_include_tag 'application' %>
