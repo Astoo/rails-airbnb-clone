@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
 
   private
 
-  def set_review
+  def set_friend
     @friend = Friend.find(params[:friend_id])
   end
 
