@@ -17,7 +17,9 @@
     <p><%=friend.price%></p>
   </div>
   <div class="card-user">
-   <%= image_tag friend.avatar %>
+    <% if friend.avatar != nil %>
+      <%= cl_image_tag friend.avatar.path %>
+    <% end %>
   </div>
   <div class="card-distance">
     <p> 3km </p>

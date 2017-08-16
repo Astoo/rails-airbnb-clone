@@ -7,7 +7,9 @@
 <% end %>
 </div>
 <div class="col-md-4" id="friends_mid">
-<%= image_tag("#{@friend.avatar}") %>
+<% if @friend.avatar != nil %>
+      <%= cl_image_tag @friend.avatar.path %>
+    <% end %>
 <h1><%= @friend.name%>'s profile</h1>
 </div>
 <div class="col-md-3" id="friends_right">
@@ -24,5 +26,3 @@
 <div id="friends_slideshow">
 <p> a bunch of photos </p>
 </div>
-
-
