@@ -34,7 +34,7 @@ end
 puts "now seeding friends"
 # seeds 150 friends with an avatar a description, a price , a name, a picture and a user id,adding an activity tag;
 30.times do
-  Friend.create!(avatar_x:"#{Faker::Avatar.image("my-own-slug", "50x50")}",description:"#{Faker::HowIMetYourMother.quote}",price:("#{rand(1..10000)}"),name:"#{Faker::Name.name}",pictures:"#{Faker::Avatar.image}", user_id: user, activity_id: activity, address: "#{@addresses.sample}", city: "Paris")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:("#{rand(1..10000)}"),name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address: "#{@addresses.sample}", city: "Paris")
 end
 puts "finished with the friends"
 puts "now creating reviews"
