@@ -18,9 +18,11 @@
   </div>
   <div class="card-user">
     <% if friend.avatar != nil %>
-
-      <%= cl_image_tag friend.avatar.path %>
-
+      <% if friend.avatar.path != nil %>
+        <%= cl_image_tag friend.avatar.path %>
+      <% elsif friend.avatar != nil %>
+        <%= image_tag friend.avatar %>
+      <% end %>
     <% end %>
   </div>
   <div class="card-distance">
