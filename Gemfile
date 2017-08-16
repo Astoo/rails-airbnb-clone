@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'simple_form'
+
 #ajoutées
 gem 'faker'
 gem 'better_errors'
@@ -25,7 +25,6 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'devise'
-gem 'figaro'
 #fin des ajoutées
 
 group :development, :test do
