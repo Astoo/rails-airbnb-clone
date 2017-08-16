@@ -20,8 +20,8 @@
     <% if friend.avatar != nil %>
       <% if friend.avatar.path != nil %>
         <%= cl_image_tag friend.avatar.path %>
-      <% elsif friend.avatar != nil %>
-        <%= image_tag friend.avatar %>
+      <% elsif friend.avatar_x != nil %>
+        <%= image_tag friend.avatar_x %>
       <% end %>
     <% end %>
   </div>
