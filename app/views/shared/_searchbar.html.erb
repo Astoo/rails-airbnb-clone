@@ -1,14 +1,14 @@
 <div class="container col-md-12" id="searchbar_search">
-      <%= simple_form_for :search, url: friends_path, method: :get, class: "form-horizontal" do |f| %>
-             <div class="col-md-6" id="searchbar_left">
-              <%= f.input :city, placeholder: "City" %>
-              </div>
-              <div class="col-md-3" id="searchbar_middle">
-                <%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" %>
-                </div>
-                <div class="col-md-3" id="searchbar_right">
-            <%= f.submit type: 'submit', class: "btn btn-primary" do %>
-            </div>
-                <% end %>
-            <%end%>
+  <%= simple_form_for :search, url: friends_path, method: :get, class: "form-horizontal" do |f| %>
+  <div class="col-md-6" id="searchbar_left">
+    <%= f.input :city, placeholder: "City" , label: false %>
+  </div>
+  <div class="col-md-3" id="searchbar_middle">
+    <%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" , label: false %>
+  </div>
+  <div class="col-md-3" id="searchbar_right">
+    <%= f.submit type: 'submit', class: "btn btn-block" do %>
+    <% end %>
+  </div>
+  <%end%>
 </div>
