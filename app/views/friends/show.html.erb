@@ -1,9 +1,28 @@
+
+<div class="container" id="friends_show">
+<div class="col-md-3 col-md-offset-1" id="friends_left">
+<% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
+<p>rating: <%=review.rating%> <%=review.comment%></p>
+<p>review by: <%=review.user.name%></p>
+<% end %>
+</div>
+<div class="col-md-4" id="friends_mid">
+<% if @friend.avatar != nil %>
+      <%= cl_image_tag @friend.avatar.path %>
+    <% end %>
 <h1><%= @friend.name%>'s profile</h1>
-<%= image_tag("#{@friend.avatar}") %>
+</div>
+<div class="col-md-3" id="friends_right">
 <p>owner: <%=@friend.user.name%></p>
 <p>price: <%=@friend.price%>€</p>
+
+<p>description: <%=@friend.description%></p>
 <% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
 <p>rating: <%=review.rating%> <%=review.comment%><p>
 <p>review by: <%=review.user.name%><p>
-
 <% end %>
+</div>
+</div>
+<div id="friends_slideshow">
+<p> a bunch of photos </p>
+</div>

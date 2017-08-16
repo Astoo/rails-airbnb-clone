@@ -1,14 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-offset-4 col-sm-4 col-sm-offset-4">
-      <h1>this is the temp index of friends</h1>
-    </div>
+<div id="searchres">
+  <div id="mapbar">
+  <div id="map">
+    <p>image</p>
   </div>
-  <div class="row">
-    <% @friends.all.each do |friend| %>
-      <div class="col-xs-12 col-sm-3">
+  <div id="searchfine">
+  search
+  </div>
+  </div>
+  <div class="container">
+    <div class="searchbar col-sm-12">
+    </div>
+    <div class="row" id="cards">
+      <% @friends.all.each do |friend| %>
+      <div class="col-xs-12 col-sm-4">
         <%= render "card", friend: friend %>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

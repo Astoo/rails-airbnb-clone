@@ -1,5 +1,27 @@
 <%= simple_form_for @friend do |f| %>
-<%= f.input :name %>
-<%= f.input :avatar %>
-<%= f.button :submit, class: 'btn btn-danger' %>
+<%= render 'error_messages', object: f.object %>
+<%= f.label :name, "Your friend's name" %>
+<%= f.text_field :name %>
+
+<%= f.label :price, "Your friend's price" %>
+<%= f.text_field :price %>
+
+<%= f.label :description, "Describe your friend with few words" %>
+<%= f.text_field :description %>
+
+<%# f.label :address, "Where does your friend lives?" %>
+<%# f.text_field :address %>
+
+<%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" %>
+
+<%#= f.input :avatar, as: :attachinary, required: false %>
+
+<%= f.input :avatar, as: :attachinary, required: false %>
+
+<%= f.input :pictures, as: :attachinary %>
+
+
+
+<%= f.submit "Add your friend to rent", class: 'btn btn-danger' %>
 <% end %>
+

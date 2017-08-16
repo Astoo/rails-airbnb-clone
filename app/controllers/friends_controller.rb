@@ -14,6 +14,7 @@ class FriendsController < ApplicationController
 
   def create
     @friend = Friend.new(friends_params)
+    @friend.user = current_user
     if @friend.save
       redirect_to friend_path(@friend)
     else
@@ -38,7 +39,7 @@ class FriendsController < ApplicationController
   end
 
   def friends_params
-    params.require(:friend).permit(:name, :avatar, :user_id, :activity)
+    params.require(:friend).permit(:name, :price, :description, :address, :activity_id, :avatar, pictures: [])
   end
 
 end
