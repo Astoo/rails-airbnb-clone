@@ -1,6 +1,6 @@
 
 
-@addresses = ["113 Avenue de la République 59160","42 Rue Vielle 59130 Lambersart","38 Rue du Dr Legay 59110","62 Rue de Cambrai 59000","2 Avenue des Saules 59160 Lille", "11 Rue du Bas Liévin 59790 Ronchin", "171 Rue des Stations 59000 Lille", "8 Avenue Ste Cécile 59370 Mons-en-Baroeul", "29T Rue d'Antin 59800 Lille", "44 Rue Turgot 59000 Lille","173 Rue Anatole France 59160 Lille", "92 Rue Jacquart 59160 Lille", "36 Rue Colbert 59800 Lille","114 Boulevard Vauban 59800 Lille", "32B Rue du Ballon 59800 Lille", "Epine Mont de Terre 59800 Lille", "6 Rue Léonard Danel 59120 Loos", "23 Rue Gosselin 59800 Lille", "114 Rue Colbert 59800 Lille", "2 Rue Charles Pranard 59000 Lille"]
+@addresses = ["25 Rue des Francs Bourgeois","2 place michel debré", "69 rue de turbigo", "1 avenue de la republique", "78 boulevard des batignolles", "23 place de la chapelle", "82 boulevard diderot", "46 rue fondary", "91 rue de l'universite", "3 place de clichy", "107 rue caulaincourt", "150 rue la fayette", "100 rue la fayette", "90 rue la fayette", "72 rue de vouillé"]
 
 
 # seeds users with a 50x50 avatar, a name , password (md5) and email.
@@ -34,7 +34,7 @@ end
 puts "now seeding friends"
 # seeds 150 friends with an avatar a description, a price , a name, a picture and a user id,adding an activity tag;
 30.times do
-  Friend.create!(avatar:"#{Faker::Avatar.image("my-own-slug", "50x50")}",description:"#{Faker::HowIMetYourMother.quote}",price:("#{rand(1..10000)}"),name:"#{Faker::Name.name}",pictures:"#{Faker::Avatar.image}", user_id: user, activity_id: activity, address: "#{@addresses.sample}")
+  Friend.create!(avatar_x:"#{Faker::Avatar.image("my-own-slug", "50x50")}",description:"#{Faker::HowIMetYourMother.quote}",price:("#{rand(1..10000)}"),name:"#{Faker::Name.name}",pictures:"#{Faker::Avatar.image}", user_id: user, activity_id: activity, address: "#{@addresses.sample}", city: "Paris")
 end
 puts "finished with the friends"
 puts "now creating reviews"
