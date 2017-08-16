@@ -1,27 +1,14 @@
-<div class="container search">
-  <div class="row">
-    <div class="col-md-12">
-      <%= simple_form_for :search, url: friends_path, method: :get, class: "form-section" do |f| %>
-        <div class="row">
-          <div class="form-group col-md-8" id="searchbar_search">
-            <div class="form-control" id="searchbar_left">
+<div class="container col-md-12" id="searchbar_search">
+      <%= simple_form_for :search, url: friends_path, method: :get, class: "form-horizontal" do |f| %>
+             <div class="col-md-6" id="searchbar_left">
               <%= f.input :city, placeholder: "City" %>
-            </div>
-          </div>
-          <div class="dropdown">
-            <div class="dropdown col-md-2" id="searchbar_dropdowncol">
-              <div class="btn btn-default dropdown-toggle" id="searchbar_middle">
-                <%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" %>
               </div>
+              <div class="col-md-3" id="searchbar_middle">
+                <%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" %>
+                </div>
+                <div class="col-md-3" id="searchbar_right">
+            <%= f.submit type: 'submit', class: "btn btn-primary" do %>
             </div>
-          </div>
-          <div class="btn btn-default col-md-2" id="searchbar_right">
-            <%= button_tag type: 'submit', class: "button postfix" do %>
-              <i class="fa fa-lg fa-search" aria-hidden="true"></i>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </div>
+                <% end %>
+            <%end%>
 </div>
