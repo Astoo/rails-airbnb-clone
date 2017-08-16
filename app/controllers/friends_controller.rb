@@ -2,7 +2,14 @@ class FriendsController < ApplicationController
 
   before_action :set_friend, only: [:show, :update, :destroy]
   def index
-    @friends = Friend.all
+    city = params[search: :city]
+    city.upcase if !city.blank?
+    activity_id = params[search: :activity_id]
+    if city.blank? || activity_id.blank?
+      @friends = Friend.all
+    else
+      @friends = Friend.where(city: city, activity_id: activity_id)
+    end
   end
 
   def show
