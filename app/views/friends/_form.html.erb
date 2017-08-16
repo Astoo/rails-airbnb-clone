@@ -1,3 +1,5 @@
+<div class="container" id="new_friend_form">
+<h1>Add a new friend</h1>
 <%= simple_form_for @friend do |f| %>
 <%= render 'error_messages', object: f.object %>
 <%= f.label :name, "Your friend's name" %>
@@ -24,4 +26,4 @@
 
 <%= f.submit "Add your friend to rent", class: 'btn btn-danger' %>
 <% end %>
-
+</div>
