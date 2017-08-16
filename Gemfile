@@ -13,7 +13,6 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'sass-rails'
-gem 'simple_form'
 gem 'uglifier'
 gem 'simple_form'
 #ajoutées
@@ -25,7 +24,6 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'devise'
-gem 'figaro'
 gem 'omniauth-facebook'
 #fin des ajoutées
 
