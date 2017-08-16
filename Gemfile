@@ -24,6 +24,7 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'devise'
+gem 'simple_form'
 
 gem 'omniauth-facebook'
 
