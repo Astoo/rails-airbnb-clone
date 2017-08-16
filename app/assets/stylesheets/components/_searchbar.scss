@@ -1,5 +1,5 @@
 
-#left {
+#searchbar_left {
   border-radius:50px;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
@@ -7,13 +7,13 @@
   height:50px !important;
 
 }
-#search{
+#searchbar_search{
   padding-right:0px !important;
   padding-left:0px !important;
   margin-left-right: 0px !important;
 
 }
-#middle {
+#searchbar_middle {
   border-radius: 0px;
   margin:0px !important;
   width: 100% !important;
@@ -24,13 +24,13 @@
 
 }
 
-#dropdowncol{
+#searchbar_dropdowncol{
   padding-right:0px !important;
   padding-left:0px !important;
 
 }
 
-#right {
+#searchbar_right {
   border-radius:25px;
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
