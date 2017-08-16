@@ -13,10 +13,9 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'sass-rails'
-gem 'simple_form'
 gem 'uglifier'
 
-#ajoutées
+
 gem 'faker'
 gem 'better_errors'
 gem 'binding_of_caller'
@@ -25,7 +24,9 @@ gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'devise'
-#fin des ajoutées
+
+gem 'omniauth-facebook'
+
 
 group :development, :test do
   gem 'pry-byebug'
