@@ -12,10 +12,16 @@
 }
 .info-boxes{
   text-align:center;
-  background-color: #EEEEEE;
   margin-top: 50px;
+  display: flex;
 
 
+
+}
+.info-box{
+   background-color: #EEEEEE;
+     box-shadow: 1px 1px 10px -4px rgba(0,0,0,0.30);
+     margin:5px;
 }
 
 #desc{
