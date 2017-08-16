@@ -26,6 +26,7 @@ gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
 gem 'devise'
 gem 'figaro'
+gem 'omniauth-facebook'
 #fin des ajoutées
 
 group :development, :test do
