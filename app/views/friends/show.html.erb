@@ -5,6 +5,7 @@
       <p>rating: <%=review.rating%> <%=review.comment%></p>
       <p>review by: <%=review.user.name%></p>
     <% end %>
+    <%= render 'review_form' %>
   </div>
   <div class="col-md-4" id="friends_mid">
     <% if @friend.avatar != nil %>

@@ -1,0 +1,9 @@
+<%= simple_form_for [@friend, @review] do |f| %>
+
+<%= f.label :comment, "Your comment" %>
+<%= f.text_field :comment, :input_html => {:rows => 10} %>
+<%= f.input :rating, collection: [0,1,2,3,4,5], prompt: "Rate the friend!" %>
+
+<%= f.submit "Review this friend", class: 'btn btn-danger' %>
+
+<% end %>
