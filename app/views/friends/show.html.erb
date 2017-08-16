@@ -2,6 +2,7 @@
 <%= image_tag("#{@friend.avatar}") %>
 <p>owner: <%=@friend.user.name%></p>
 <p>price: <%=@friend.price%>€</p>
+<p>description: <%=@friend.description%></p>
 <% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
 <p>rating: <%=review.rating%> <%=review.comment%><p>
 <p>review by: <%=review.user.name%><p>
