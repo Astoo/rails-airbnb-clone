@@ -1,6 +1,7 @@
 class FriendsController < ApplicationController
-
   before_action :set_friend, only: [:show, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params["search"] != nil
       city = params["search"]["city"]
