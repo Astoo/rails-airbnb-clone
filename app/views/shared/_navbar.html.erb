@@ -4,12 +4,11 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+    <%= link_to "All potos",friends_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
     <%= link_to "Add a poto",new_friend_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "All potos",friends_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
@@ -21,7 +20,6 @@
             <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
             <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <% else %>
-              <%= link_to "All potos",friends_path, class: "navbar-wagon-item navbar-wagon-link" %>
               <%= link_to 'Disconnect', destroy_user_session_path, method: :delete %>
           <% end %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
