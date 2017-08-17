@@ -1,8 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_friend
 
-  #take care of rending the new and create methods accessible only if a user is logged in.
-
   def create
     @review = Review.new(review_params)
     @review.user = current_user

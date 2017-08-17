@@ -5,7 +5,13 @@
       <p>rating: <%=review.rating%> <%=review.comment%></p>
       <p>review by: <%=review.user.name%></p>
     <% end %>
-    <% if user_signed_in? %>
+    <% booked = 0 %>
+    <% @bookings.each do |booking| %>
+      <% if booking["friend_id"] == @friend.id && booking["status"] == "accepted" %>
+        <% booked = 1 %>
+      <% end %>
+    <% end %>
+    <% if user_signed_in? && booked == 1%>
       <%= render 'review_form' %>
     <% end %>
   </div>
@@ -18,6 +24,21 @@
   <div class="col-md-3" id="friends_right">
     <p>owner: <%=@friend.user.name%></p>
     <p>price: <%=@friend.price%>€</p>
+    <% if user_signed_in? %>
+      <% @bookings.each do |booking| %>
+        <% if booking["friend_id"] == @friend.id %>
+          <%= "You have booked this friend from #{booking["start_date"]} to #{booking["end_date"]}" %>
+          <% if booking["status"] == "pending" %>
+            <%= "Your reservation is still #{booking["status"]}." %>
+          <% else %>
+            <%= "Your reservation has been #{booking["status"]}." %>
+          <% end %>
+        <% end %>
+      <% end %>
+      <div >
+          <%= render 'booking_form' %>
+        </div>
+    <% end %>
   </div>
 </div>
 <div id="friends_slideshow">

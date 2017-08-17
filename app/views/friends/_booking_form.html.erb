@@ -1,0 +1,12 @@
+<%= simple_form_for [@friend, @booking] do |f| %>
+
+<%= f.input :start_date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 10,
+                              order: [:month, :year, :day] %>
+<%= f.input :end_date, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 10,
+                              order: [:month, :year, :day] %>
+
+<%= f.submit "Book this friend", class: 'btn btn-danger' %>
+
+<% end %>
