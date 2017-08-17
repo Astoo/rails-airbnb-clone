@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'accounts/show'
+
   resources :friends, except: :edit do
     resources :reviews, only: :create
     resources :bookings, only: [:new, :show, :destroy, :create, :update]
