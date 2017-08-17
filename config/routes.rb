@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :friends do
-    resources :reviews
-    resources :bookings
+  resources :friends, except: :edit do
+    resources :reviews, only: :create
+    resources :bookings, only: [:new, :show, :destroy, :create, :update]
   end
 
   devise_for :users,
