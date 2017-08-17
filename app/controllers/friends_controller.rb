@@ -11,11 +11,7 @@ class FriendsController < ApplicationController
       else
         @friends = Friend.near([lat, lng], 20)
       end
-      @hash = Gmaps4rails.build_markers(@friends) do |friend, marker|
-        marker.lat friend.latitude
-        marker.lng friend.longitude
-        marker.infowindow render_to_string(partial: "/friends/map_box", locals: { friend: friend })
-      end
+
       city = params["search"]["city"]
       city.upcase if !city.blank?
       activity_id = params["search"]["activity_id"]
@@ -26,6 +22,12 @@ class FriendsController < ApplicationController
       end
     else
       @friends = Friend.all
+    end
+
+    @hash = Gmaps4rails.build_markers(@friends) do |friend, marker|
+      marker.lat friend.latitude
+      marker.lng friend.longitude
+      marker.infowindow render_to_string(partial: "/friends/map_box", locals: { friend: friend })
     end
   end
 
