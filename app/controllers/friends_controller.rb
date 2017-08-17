@@ -19,6 +19,8 @@ class FriendsController < ApplicationController
 
   def show
     @review = Review.new
+    @booking = Booking.new
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def new
