@@ -1,5 +1,13 @@
 class AccountsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
+  before_action :set_account_id
+
   def show
+  end
+
+
+  private
+
+  def set_account_id
+    @account_id = current_user
   end
 end
