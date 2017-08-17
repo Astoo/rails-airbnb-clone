@@ -1,8 +1,25 @@
 <div id="dashboard">
-<div id="profile">
+<div id="profilebar">
 </div>
 <div id="friendcards">
 </div>
-<div id="rents">
+<div id="bookings">
+<% for @user.bookings.each do |booking| %>
+<div class="booking">
+  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+  <div class="friend-name">
+    <h3><%= booking.friend%></h3>
+    <p><%= booking.date%></p>
+  </div>
+  <div class="booking-body">
+    <p><strong><%= booking.start_date %> to <%=booking.end_date %></strong></p>
+  </div>
+  <div class="booking-status">
+    <p class="status pending"><%= booking.status %></p>
+    <p class="price">€<%= booking.friend.price %></p>
+  </div>
+</div>
+<% end %>
 </div>
 </div>
+
