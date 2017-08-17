@@ -9,17 +9,14 @@
       <%= render 'review_form' %>
     <% end %>
   </div>
+
   <div class="col-md-4" id="friends_mid">
-    <% if @friend.avatar != nil %>
-      <%= cl_image_tag @friend.avatar.path %>
-    <% end %>
-    <h1><%= @friend.name%>'s profile</h1>
+  <h1><%= @friend.name%>'s profile</h1>
+    <img src="http://enorme.tv/uploads/articles/695/beauf-de-france.jpg" >
   </div>
   <div class="col-md-3" id="friends_right">
     <p>owner: <%=@friend.user.name%></p>
     <p>price: <%=@friend.price%>€</p>
   </div>
 </div>
-<div id="friends_slideshow">
-  <p> a bunch of photos </p>
-</div>
+
