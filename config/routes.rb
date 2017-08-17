@@ -6,6 +6,13 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :show, :destroy, :create, :update]
   end
 
+
+  resources :accounts, only: :show do
+    resources :friends, only: [:new]
+    resources :bookings, only: [:show, :delete, :update]
+  end
+
+
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
