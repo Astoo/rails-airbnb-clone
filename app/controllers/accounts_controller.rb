@@ -8,7 +8,6 @@ class AccountsController < ApplicationController
     end
   end
 
-
   private
 
   def set_account_id
