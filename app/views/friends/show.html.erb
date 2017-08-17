@@ -5,14 +5,17 @@
       <p>rating: <%=review.rating%> <%=review.comment%></p>
       <p>review by: <%=review.user.name%></p>
     <% end %>
-    <% booked = 0 %>
-    <% @bookings.each do |booking| %>
-      <% if booking["friend_id"] == @friend.id && booking["status"] == "accepted" %>
-        <% booked = 1 %>
+
+    <% if user_signed_in? %>
+      <% booked = 0 %>
+      <% @bookings.each do |booking| %>
+        <% if booking["friend_id"] == @friend.id && booking["status"] == "accepted" %>
+          <% booked = 1 %>
+        <% end %>
       <% end %>
-    <% end %>
-    <% if user_signed_in? && booked == 1%>
-      <%= render 'review_form' %>
+      <% if booked == 1 %>
+        <%= render 'review_form' %>
+      <% end %>
     <% end %>
   </div>
 

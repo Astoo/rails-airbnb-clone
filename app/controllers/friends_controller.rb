@@ -20,7 +20,9 @@ class FriendsController < ApplicationController
   def show
     @review = Review.new
     @booking = Booking.new
-    @bookings = Booking.where(user_id: current_user.id)
+    if user_signed_in?
+      @bookings = Booking.where(user_id: current_user.id)
+    end
   end
 
   def new
