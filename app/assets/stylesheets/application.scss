@@ -2,7 +2,10 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-
+$dark: #30231d;
+$lightdark: #6a5750;
+$orange: #b5a397;
+$white: #f6f1ed;
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
