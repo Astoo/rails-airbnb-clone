@@ -8,8 +8,10 @@
   color: $orange;
   width:100%;
   margin-top: 5px;
-  position:absolute;
+  position:relative !important;
   bottom : 0px;
+  height: 213px;
+
 }
 .footer-copyright{
   color: $orange !important;
