@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
   def destroy
     booking = Booking.find(params[:id])
     booking.destroy
-    redirect_to friend_path(booking.friend)
+    redirect_to account_path(current_user)
   end
 
   def update
