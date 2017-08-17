@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
   def show
     if user_signed_in?
       @my_bookings = Booking.where(user_id: current_user.id)
-      @others_bookings = Booking.joins(:friends).where(user_id: current_user)
+      @others_bookings = Booking.joins(:friend).where(user_id: current_user)
     end
   end
 
