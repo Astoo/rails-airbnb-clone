@@ -11,6 +11,10 @@
   text-align: center;
 }
 #friends_right{
+  justify-content:space-around;
+  flex-direction: column;
+
+
 }
 #friends_show img{
   width:350px;
@@ -20,4 +24,41 @@
   position: relative;
   top:12vh;
 }
+#bookcard{
+  background-color: $white;
+  justify-content:center;
+  margin:0px !important;
+  color: $lightdark;
+  border-radius:4px;
+  padding: 20px;
+  margin-top: 50px !important;
+}
 
+#price{
+  font-weight: bold;
+  background-color: $white;
+  justify-content:center;
+  margin-top:12vh !important;
+  color: $lightdark;
+  border-radius:4px;
+  padding: 20px;
+}
+#activity{
+margin-top: 50px;
+background-image: url(https://pbs.twimg.com/media/CaXIxQGUEAA1PMU.jpg);
+ font-weight: bold;
+  background-color: $white;
+  justify-content:center;
+  color: $white;
+  border-radius:4px;
+  padding: 20px;
+  height:150px;
+}
+#review{
+  border-bottom-style: solid;
+  color: $white;
+  position:relative;
+  top:10vh;
+  margin-top:5px;
+
+}
