@@ -6,11 +6,10 @@
   height: 100px;
   padding: 0px 50px;
   color: $orange;
-  position: absolute;
-  bottom:0;
   width:100%;
   margin-top: 5px;
-
+  position:absolute !important;
+  bottom : 0px;
 }
 .footer-copyright{
   color: $orange !important;
