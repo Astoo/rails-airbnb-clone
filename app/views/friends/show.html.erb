@@ -1,6 +1,7 @@
 
 <div class="container" id="friends_show">
   <div class="col-md-3 col-md-offset-1" id="friends_left">
+  <% if Review.where("friend_id = ?", @friend.id).exists?%>
     <% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
       <p>rating: <%=review.rating%> <%=review.comment%></p>
       <p>review by: <%=review.user.name%></p>
@@ -16,6 +17,9 @@
       <% if booked == 1 %>
         <%= render 'review_form' %>
       <% end %>
+    <% end %>
+    <% else %>
+    <h1>No reviews yet!</h1>
     <% end %>
   </div>
 

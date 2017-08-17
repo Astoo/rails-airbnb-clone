@@ -21,23 +21,3 @@
   top:12vh;
 }
 
-<div class="container" id="friends_show">
-  <div class="col-md-3 col-md-offset-1" id="friends_left">
-    <% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
-      <p>rating: <%=review.rating%> <%=review.comment%></p>
-      <p>review by: <%=review.user.name%></p>
-    <% end %>
-    <% if user_signed_in? %>
-      <%= render 'review_form' %>
-    <% end %>
-  </div>
-
-  <div class="col-md-4" id="friends_mid">
-  <h1><%= @friend.name%>'s profile</h1>
-    <img src="http://enorme.tv/uploads/articles/695/beauf-de-france.jpg" >
-  </div>
-  <div class="col-md-3" id="friends_right">
-    <p>owner: <%=@friend.user.name%></p>
-    <p>price: <%=@friend.price%>€</p>
-  </div>
-</div>
