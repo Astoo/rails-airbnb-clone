@@ -5,13 +5,13 @@
 </div>
 <div id="bookings">
 <% for @user.bookings.each do |booking| %>
-<div class="message">
+<div class="booking">
   <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
   <div class="friend-name">
     <h3><%= booking.friend%></h3>
     <p><%= booking.date%></p>
   </div>
-  <div class="message-body">
+  <div class="booking-body">
     <p><strong><%= booking.start_date %> to <%=booking.end_date %></strong></p>
   </div>
   <div class="booking-status">
