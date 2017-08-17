@@ -4,6 +4,18 @@ class FriendsController < ApplicationController
 
   def index
     if params["search"] != nil
+      lat = params[:lat]
+      lng = params[:lng]
+      if lat.blank? || lng.blank?
+        @friends = Friend.where.not(latitude: nil, longitude: nil)
+      else
+        @friends = Friend.near([lat, lng], 20)
+      end
+      @hash = Gmaps4rails.build_markers(@friends) do |friend, marker|
+        marker.lat friend.latitude
+        marker.lng friend.longitude
+        marker.infowindow render_to_string(partial: "/friends/map_box", locals: { friend: friend })
+      end
       city = params["search"]["city"]
       city.upcase if !city.blank?
       activity_id = params["search"]["activity_id"]
@@ -18,6 +30,8 @@ class FriendsController < ApplicationController
   end
 
   def show
+    @friend = Friend.find(params[:id])
+    @friend_coordinates = { lat: @friend.latitude, lng: @friend.longitude }
     @review = Review.new
   end
 

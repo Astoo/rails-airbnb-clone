@@ -8,6 +8,7 @@
 <% rating = rating/i %>
 <% end %>
 
+<%= link_to friend_path(friend) do %>
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
   <div class="card-name">
     <h4><%= link_to friend.name, friend_path(friend) %></h4>
@@ -35,6 +36,7 @@
     <!-- mettre un else plus tard pour griser les étoiles  -->
   </div>
 </div>
+<% end %>
 
 
 

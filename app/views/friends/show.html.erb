@@ -23,3 +23,11 @@
 <div id="friends_slideshow">
   <p> a bunch of photos </p>
 </div>
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @friend_coordinates.to_json %>;
+      alert('Friend coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
