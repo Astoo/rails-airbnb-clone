@@ -46,14 +46,17 @@
           <p class="status pending">
             <%= booking.status %>
           </p>
-          <%= "requested by" + booking.user.name %>
-          <%= link_to "accept", account_path(current_user) %>
-          <%= link_to "decline", account_path(current_user) %>
           <p class="price">€<%= booking.friend.price %></p>
-          <%= "owned by" + booking.friend.user.name %>
+          <%= "requested by" + booking.user.name %>
+          <%= link_to "accept", account_path(current_user), onclick: booking.status = "accepted" %>
+          <%= link_to "decline", account_path(current_user), onclick: booking.status = "rejected"%>
         </div>
       </div>
     <% end %>
   </div>
 </div>
 
+
+
+
+:onclick => 'alert("Please no!")'
