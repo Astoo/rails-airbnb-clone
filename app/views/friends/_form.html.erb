@@ -1,29 +1,30 @@
-<div class="container" id="new_friend_form">
+<div class="container col-md-12" id="new_friend_form">
 <h1>Add a new friend</h1>
+<div class="col-md-6 col-md-offset-3">
 <%= simple_form_for @friend do |f| %>
 <%= render 'error_messages', object: f.object %>
-<%= f.label :name, "Your friend's name" %>
-<%= f.text_field :name %>
+<p><%= f.label :name, "Your friend's name" %>
+<%= f.text_field :name %></p>
 
-<%= f.label :price, "Your friend's price" %>
-<%= f.text_field :price %>
-
-<%= f.label :description, "Describe your friend with few words" %>
-<%= f.text_field :description %>
+<P><%= f.label :price, "Your friend's price" %>
+<%= f.text_field :price %></p>
+<p><%= f.label :description, "Describe your friend with few words" %>
+<%= f.text_field :description %></p>
 
 <%# f.label :address, "Where does your friend lives?" %>
 <%# f.text_field :address %>
 
-<%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" %>
+<p><%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" %></p>
 
 <%#= f.input :avatar, as: :attachinary, required: false %>
 
-<%= f.input :avatar, as: :attachinary, required: false %>
+<div id="pictureattach"><p><%= f.input :avatar, as: :attachinary, required: false %></p>
 
-<%= f.input :pictures, as: :attachinary %>
+<p><%= f.input :pictures, as: :attachinary %></p>
 
+</div>
 
-
-<%= f.submit "Add your friend to rent", class: 'btn btn-danger' %>
+<p><%= f.button :submit, "Add your friend to rent"%></p>
 <% end %>
+</div>
 </div>
