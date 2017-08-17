@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :accounts, only: :show do
     resources :friends, only: [:new]
-    resources :bookings, only: [:show, :delete, :update]
+    resources :bookings, only: [:show, :destroy, :update]
   end
 
 
