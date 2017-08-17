@@ -1,11 +1,15 @@
 
 <div class="container" id="friends_show">
-  <div class="col-md-3 col-md-offset-1" id="friends_left">
+  <div class="col-md-4" id="friends_left">
+  <% if Review.where("friend_id = ?", @friend.id).exists?%>
     <% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
-      <p>rating: <%=review.rating%> <%=review.comment%></p>
-      <p>review by: <%=review.user.name%></p>
+      <div id="review">
+      <p>rating: <%=review.rating%></p>
+      <P id="comment">comment:</P>
+      <p><%=review.comment%></p>
+      <p>review by <%=review.user.name%></p>
+      </div>
     <% end %>
-
     <% if user_signed_in? %>
       <% booked = 0 %>
       <% @bookings.each do |booking| %>
@@ -14,19 +18,26 @@
         <% end %>
       <% end %>
       <% if booked == 1 %>
+      <div id="review_form">
         <%= render 'review_form' %>
+        </div>
       <% end %>
     <% end %>
-  </div>
-  <div class="col-md-4" id="friends_mid">
-    <% if @friend.avatar != nil %>
-      <%= cl_image_tag @friend.avatar.path %>
+    <% else %>
+    <h1>No reviews yet!</h1>
     <% end %>
-    <h1><%= @friend.name%>'s profile</h1>
   </div>
-  <div class="col-md-3" id="friends_right">
+
+  <div class="col-md-4" id="friends_mid">
+  <h1><%= @friend.name%>'s profile</h1>
+    <img src="http://enorme.tv/uploads/articles/695/beauf-de-france.jpg" >
+  </div>
+  <div class="col-md-4" id="friends_right">
+<div id="price">
     <p>owner: <%=@friend.user.name%></p>
     <p>price: <%=@friend.price%>€</p>
+</div>
+    <div id="bookcard">
     <% if user_signed_in? %>
       <% @bookings.each do |booking| %>
         <% if booking["friend_id"] == @friend.id %>
@@ -42,8 +53,10 @@
           <%= render 'booking_form' %>
         </div>
     <% end %>
+    </div>
+    <div id="activity">
+    <p><%=@friend.name%> likes activity </p>
+    </div>
   </div>
 </div>
-<div id="friends_slideshow">
-  <p> a bunch of photos </p>
-</div>
+
