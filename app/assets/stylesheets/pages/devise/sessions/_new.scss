@@ -1,0 +1,19 @@
+#login{
+text-align: center;
+}
+
+#login input{
+  background-color: $dark;
+  opacity:1;
+  border:none;
+  padding:10px;
+  border-radius:5px;
+  color: $white;
+}
+
+#login input:hover{
+  opacity:0.7
+}
+#login label{
+  color: $white;
+}

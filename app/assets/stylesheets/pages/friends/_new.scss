@@ -1,0 +1,35 @@
+#new_friend_form{
+text-align: center;
+}
+
+#new_friend_form input{
+  background-color: $dark;
+  opacity:1;
+  border:none;
+  padding:10px;
+  border-radius:5px;
+  color: $white;
+  margin-bottom: 10px;
+
+}
+
+#new_friend_form input:hover{
+  opacity:0.7
+}
+#new_friend_form label{
+  color: $white;
+}
+#new_friend_form select{
+    background-color: $dark;
+  opacity:1;
+  border:none;
+  padding:10px;
+  border-radius:5px;
+  color: $white;
+  margin-bottom: 10px;
+  padding:6px;
+
+}
+#pictureattach{
+  justify-content: center;
+}

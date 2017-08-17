@@ -1,5 +1,8 @@
 body{
   color:$white;
+  position: relative;
+      min-height: 100%;
+    padding: 0 0 100px;
 }
 body a{
   color:$white;
@@ -33,6 +36,8 @@ input:hover{
 .banner{
   background-position: center;
   box-shadow: inset 1px 1px 10px -4px rgba(0,0,0,0.43);
+  margin:0 !important;
+  padding: 0 !important;
 }
 .info-boxes{
   text-align:center;
