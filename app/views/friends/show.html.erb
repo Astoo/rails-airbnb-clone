@@ -33,10 +33,10 @@
     <img src="http://enorme.tv/uploads/articles/695/beauf-de-france.jpg" >
   </div>
   <div class="col-md-4" id="friends_right">
-<div id="price">
-    <p>owner: <%=@friend.user.name%></p>
-    <p>price: <%=@friend.price%>€</p>
-</div>
+    <div id="price">
+      <p>owner: <%=@friend.user.name%></p>
+      <p>price: <%=@friend.price%>€</p>
+    </div>
     <div id="bookcard">
     <% if user_signed_in? %>
       <% @bookings.each do |booking| %>
