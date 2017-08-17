@@ -9,9 +9,10 @@ Rails.application.routes.draw do
 
   resources :accounts, only: :show do
     resources :friends, only: [:new]
-    resources :bookings, only: [:show, :destroy, :update]
   end
 
+  post 'accept_booking', to: 'bookings#accept_booking'
+  post 'reject_booking', to: 'bookings#reject_booking'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
