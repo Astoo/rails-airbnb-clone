@@ -2,5 +2,5 @@
 <%=render 'form' %>
 
 <%= content_for(:after_js) do %>
-  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=AIzaSyAUfW_94AwWFyPgr5p5xocuyY8kpOBzL-I"></script>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=places&amp;key=<%=ENV['GOOGLE_API_SERVER_KEY']%>"></script>
 <% end %>
