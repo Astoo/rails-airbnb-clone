@@ -1,25 +1,13 @@
 <div id="dashboard">
-<div id="profilebar">
-</div>
-<div id="friendcards">
-</div>
-<div id="bookings">
-<% for @user.bookings.each do |booking| %>
-<div class="booking">
-  <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
-  <div class="friend-name">
-    <h3><%= booking.friend%></h3>
-    <p><%= booking.date%></p>
+  <div id="profilebar">
   </div>
-  <div class="booking-body">
-    <p><strong><%= booking.start_date %> to <%=booking.end_date %></strong></p>
+  <div id="friendcards">
+  <% Friend.all.where(user_id: current_user.id) do |friend| %>
+  <%= render "card", friend: friend %>
+  <% end %>
+  <%= link_to "add ton poto" , new_friend_path %>
   </div>
-  <div class="booking-status">
-    <p class="status pending"><%= booking.status %></p>
-    <p class="price">€<%= booking.friend.price %></p>
+  <p>test</p>
+  <div id="booking ">
   </div>
 </div>
-<% end %>
-</div>
-</div>
-
