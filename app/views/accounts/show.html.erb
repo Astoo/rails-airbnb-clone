@@ -1,7 +1,7 @@
 <div id="dashboard">
   <div class="col-md-3" id="profilebar">
     <div id="profile">
-    <% if current_user.avatar.path != nil %>
+    <% if current_user.avatar != nil %>
       <% path = current_user.avatar.path.sub(/v1\d*/, 'w_300,h_300,c_thumb,r_max') %>
       <%= cl_image_tag path %>
     <% elsif current_user.facebook_picture_url != nil %>
