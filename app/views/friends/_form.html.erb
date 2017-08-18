@@ -3,13 +3,11 @@
 <div class="col-md-6 col-md-offset-3">
 <%= simple_form_for @friend do |f| %>
 <%= render 'error_messages', object: f.object %>
-<p><%= f.label :name, "Your friend's name" %>
-<%= f.text_field :name %></p>
+<p><%= f.input :name, placeholder: "Your friend's name"%></p>
 
-<P><%= f.label :price, "Your friend's price" %>
-<%= f.text_field :price %></p>
-<p><%= f.label :description, "Describe your friend with few words" %>
-<%= f.text_field :description %></p>
+<P><%= f.input :price, placeholder: "15€"%></p>
+<p><%= f.input :description, placeholder: "Describe your friend with few words" %>
+
 
 <%# f.label :address, "Where does your friend lives?" %>
 <%# f.text_field :address %>
@@ -20,13 +18,14 @@
 
 <%= f.input :address %>
 <%= f.input :city %>
+<div class="col-md-6 col-md-offset-3">
 <div id="pictureattach"><p><%= f.input :avatar, as: :attachinary, required: false %></p>
 
 
 <p><%= f.input :pictures, as: :attachinary %></p>
 
 </div>
-
+</div>
 <p><%= f.button :submit, "Add your friend to rent"%></p>
 <% end %>
 </div>

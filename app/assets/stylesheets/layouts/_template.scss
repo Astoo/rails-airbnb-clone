@@ -1,5 +1,5 @@
 body{
-  background-color: $orange;
+  background-color:$white;
   margin-bottom:0;
 }
 body a{
@@ -41,19 +41,20 @@ input:hover{
   text-align:center;
   margin-top: 50px;
   display: flex;
+}
 
 
 h1{
   color:$grey;
 }
 
-}
 .info-box{
    background-color: $blue;
      box-shadow: 1px 1px 10px -4px rgba(0,0,0,0.30);
      margin:5px;
      border-radius: 5px;
      color: $grey;
+     padding: 10px;
 }
 
 #desc{
@@ -62,8 +63,4 @@ h1{
 }
 .container search{
   padding:0px;
-}
-
-body {
-  background-color:$white;
 }

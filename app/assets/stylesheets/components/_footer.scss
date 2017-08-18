@@ -1,5 +1,5 @@
 .footer {
-  background-color: $white;
+   background-color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,16 +9,19 @@
   margin-top: 5px;
   position:relative;
   bottom : 0px;
-   box-shadow: 0 -1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-
+  height: 70px;
+  box-shadow: 0 -7px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
 }
+
 .footer-copyright{
   color: $grey !important;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: $grey;
   opacity:0.8;
@@ -26,14 +29,17 @@
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 0.5;
   color: $grey;
 }
+
 .fa {
   color: $grey;
   opacity: 0.15
 }
+
 .fa:hover{
   color: $grey;
   opacity: 0.1;
