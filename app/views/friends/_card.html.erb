@@ -12,6 +12,8 @@
   <% path = friend.avatar.path %>
 <% elsif friend.avatar_x != nil %>
   <% path = friend.avatar_x %>
+<% else %>
+<% path = "http://bigpicturesb.net/wp-content/uploads/2011/11/generic-profile-pic.png" %>
 <% end %>
 
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
