@@ -7,7 +7,7 @@
 puts "startin my seed"
 puts "seeding 50 users"
 50.times do
-  User.create!(name:"#{Faker::Name.name}", password:"#{Faker::Crypto.md5}", email:"#{Faker::Internet.email}", avatar:"#{Faker::Avatar.image("my-own-slug", "50x50")}")
+  User.create!(name:"#{Faker::Name.name}", password:"#{Faker::Crypto.md5}", email:"#{Faker::Internet.email}", avatar:"")
 end
 puts "finished seeding 150 users"
 puts "now seeding some activities"
@@ -29,13 +29,20 @@ def user
 end
 
 def friend
-  rand(1..30)
+  rand(1..10)
 end
 puts "now seeding friends"
 # seeds 150 friends with an avatar a description, a price , a name, a picture and a user id,adding an activity tag;
-30.times do
-  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:("#{rand(1..10000)}"),name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address: "#{@addresses.sample}", city: "Paris")
-end
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"66 avenue du marechal foch", latitude: 3.097987 , longitude: 50.671254 , zip_code:"59700", country: "France", city:"MARCQ-EN-BAROEUL")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"Boulevard de l'alliance nord-ouest", latitude: 3.029422 , longitude: 50.656133 , zip_code:"59130", country: "France", city:"LAMBERSART")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"92 rue georges potie", latitude: 3.002128  , longitude: 50.612690 , zip_code:"59120", country: "France", city:"LOOS")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"94 rue de lannoy", latitude: 3.098258 , longitude: 50.634362 , zip_code:"59800", country: "France", city:"LILLE")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"68 boulevard victor hugo", latitude: 3.064269 , longitude: 50.623147 , zip_code:"59000", country: "France", city:"LILLE")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"42 rue du ballon", latitude: 3.084354 , longitude: 50.647426 , zip_code:"59800", country: "France", city:"LILLE")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"40 avenue du marechal foch", latitude: 3.028478 , longitude: 50.648678 , zip_code:"59130", country: "France", city:"LAMBERSART")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"49 avenue du president kennedy", latitude: 3.011484 , longitude: 50.651399 , zip_code:"59130", country: "France", city:"LAMBERSART")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"157 rue jules guesde", latitude: 3.008136 , longitude: 50.638772 , zip_code:"59160", country: "France", city:"LILLE")
+  Friend.create!(avatar_x:"",description:"#{Faker::HowIMetYourMother.quote}",price:"#{rand(1..10000)}",name:"#{Faker::Name.name}",pictures:"", user_id: user, activity_id: activity, address:"51 avenue de boufflers", latitude: 3.020496 , longitude: 50.643834 , zip_code:"59130", country: "France", city:"LAMBERSART")
 puts "finished with the friends"
 puts "now creating reviews"
 45.times do
