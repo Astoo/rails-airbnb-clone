@@ -1,3 +1,4 @@
+
 #friends_show{
   display:flex;
   min-height: 800px !important;
@@ -5,7 +6,7 @@
 }
 
 #friends_left {
-
+  height:90vh;
 }
 #friends_mid{
   text-align: center;
@@ -13,8 +14,6 @@
 #friends_right{
   justify-content:space-around;
   flex-direction: column;
-
-
 }
 #friends_show img{
   width:350px;

@@ -1,6 +1,6 @@
 
 <div class="container" id="friends_show">
-  <div class="col-md-4" id="friends_left">
+  <div style="overflow: auto" class="col-md-4" id="friends_left">
   <% if Review.where("friend_id = ?", @friend.id).exists?%>
     <% Review.where("friend_id = ?", @friend.id).find_each do |review| %>
       <div id="review">
