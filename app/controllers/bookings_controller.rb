@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :update, :destroy]
+  before_action :set_booking, only: [:show, :update, :destroy, :accept_booking, :reject_booking]
   before_action :init_friend, only: [:new, :create]
 
   def new
@@ -12,7 +12,7 @@ class BookingsController < ApplicationController
   def destroy
     booking = Booking.find(params[:id])
     booking.destroy
-    redirect_to friend_path(booking.friend)
+    redirect_to account_path(current_user)
   end
 
   def update
@@ -29,6 +29,15 @@ class BookingsController < ApplicationController
       @booking.save
     end
     redirect_to friend_path(@friend)
+  end
+
+
+  def accept_booking
+    @booking.status = "accepted"
+  end
+
+  def reject_booking
+    @booking.status = "rejected"
   end
 
   private

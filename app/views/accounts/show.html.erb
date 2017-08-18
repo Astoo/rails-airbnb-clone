@@ -1,5 +1,6 @@
 <div id="dashboard">
   <div id="profilebar">
+
   </div>
   <div id="friendcards">
   <% Friend.all.where(user_id: current_user.id) do |friend| %>
@@ -7,7 +8,50 @@
   <% end %>
   <%= link_to "add ton poto" , new_friend_path %>
   </div>
-  <p>test</p>
-  <div id="booking ">
+  </div>
+  <div id="bookings">
+    <% @my_bookings.each do |booking| %>
+      <div class="booking">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="friend-name">
+          <h3><%= booking.friend.name %></h3>
+        </div>
+        <div class="booking-body">
+          <p><strong><%= booking.start_date %> to <%=booking.end_date %></strong></p>
+        </div>
+        <div class="booking-status">
+          <p class="status pending">
+            <%= booking.status %>
+          </p>
+          <% if booking.status != "rejected" %>
+            <%= link_to "Cancel booking", account_booking_path(current_user, booking), method: :delete %>
+          <% end %>
+          <p class="price">€<%= booking.friend.price %></p>
+          <%= "owned by" + booking.friend.user.name %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div id="bookings">
+    <% @others_bookings.each do |booking| %>
+      <div class="booking">
+        <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+        <div class="friend-name">
+          <h3><%= booking.friend.name %></h3>
+        </div>
+        <div class="booking-body">
+          <p><strong><%= booking.start_date %> to <%=booking.end_date %></strong></p>
+        </div>
+        <div class="booking-status">
+          <p class="status pending">
+            <%= booking.status %>
+          </p>
+          <p class="price">€<%= booking.friend.price %></p>
+          <%= "requested by" + booking.user.name %>
+          <%= link_to "accept", accept_booking_path(id: booking.id), metod: :post %>
+          <%= link_to "decline", reject_booking_path(id: booking.id), metod: :post %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
