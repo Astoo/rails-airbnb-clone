@@ -29,10 +29,13 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  text-shadow: 0 0 0 5px;
 }
 
 .card-name h4 {
   margin: 1px;
+  color: #FFFFFF;
 }
 
 .card-distance {
@@ -74,3 +77,4 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
