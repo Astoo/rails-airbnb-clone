@@ -3,12 +3,12 @@ text-align: center;
 }
 
 #new_friend_form input{
-  background-color: $dark;
+  background-color: $orange;
   opacity:1;
   border:none;
   padding:10px;
   border-radius:5px;
-  color: $white;
+  color: $grey;
   margin-bottom: 10px;
 
 }
@@ -17,10 +17,10 @@ text-align: center;
   opacity:0.7
 }
 #new_friend_form label{
-  color: $white;
+  color: $grey;
 }
 #new_friend_form select{
-    background-color: $dark;
+    background-color: $orange;
   opacity:1;
   border:none;
   padding:10px;
