@@ -1,15 +1,14 @@
 <div id="dashboard">
-  <div id="profilebar">
+  <div class="col-md-3" id="profilebar">
     <p>display ici les infos du profil</p>
     <%= link_to "edit profile", edit_user_registration_path %>
   </div>
-  <div id="friendcards">
-  <% Friend.all.where(user_id: current_user.id) do |friend| %>
-  <%= render "card", friend: friend %>
+  <div class="col-md-9" id="friendcards">
+  <% friends = Friend.all.where(user_id: current_user.id) %>
+  <% friends.each do |friend| %>
+  <div class="col-md-2" ><%= render "friends/card", friend: friend %></div>
   <% end %>
   <%= link_to "add ton poto" , new_friend_path %>
-  </div>
-  </div>
   <div id="bookings">
     <% @my_bookings.each do |booking| %>
       <div class="booking">
@@ -32,8 +31,6 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div id="bookings">
     <% @others_bookings.each do |booking| %>
       <div class="booking">
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
@@ -64,5 +61,6 @@
         </div>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
