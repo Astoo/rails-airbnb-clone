@@ -1,5 +1,5 @@
 <div id="dashboard">
-  <div id="profilebar">
+  <div class="col-md-3" id="profilebar">
     <p>display ici les infos du profil</p>
     <%= link_to "edit profile", edit_user_registration_path %>
   </div>
@@ -12,10 +12,7 @@
     <p><%= friend.price %></p>
     <p><%= friend.address %></p>
   <% end %>
-
   <%= link_to "add ton poto" , new_friend_path %>
-  </div>
-  </div>
   <div id="bookings">
     <% @my_bookings.each do |booking| %>
       <div class="booking">
@@ -38,8 +35,6 @@
         </div>
       </div>
     <% end %>
-  </div>
-  <div id="bookings">
     <% @others_bookings.each do |booking| %>
       <div class="booking">
         <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
@@ -70,5 +65,6 @@
         </div>
       </div>
     <% end %>
+    </div>
   </div>
 </div>
