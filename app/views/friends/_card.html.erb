@@ -25,9 +25,6 @@
   <div class="card-description">
     <p><%=friend.price%> £</p>
   </div>
-    <div class="card-distance">
-      <p> 3km </p>
-    </div>
     <div class="card-rating">
       <% if rating > 0 %>
         <P>rating : <%= rating %></P>
@@ -36,5 +33,6 @@
     </div>
     <a class="card-link" href="<%= friend_path(friend)%>" ></a>
   </div>
-  <%end%>
+
+<% end %>
 
