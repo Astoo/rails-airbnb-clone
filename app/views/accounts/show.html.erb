@@ -3,10 +3,14 @@
     <p>display ici les infos du profil</p>
     <%= link_to "edit profile", edit_user_registration_path %>
   </div>
-  <div class="col-md-9" id="friendcards">
-  <% friends = Friend.all.where(user_id: current_user.id) %>
-  <% friends.each do |friend| %>
-  <div class="col-md-2" ><%= render "friends/card", friend: friend %></div>
+  <div id="friendcards">
+  <%# Friend.all.where(user_id: current_user.id) do |friend| %>
+  <%#= render "card", friend: friend %>
+  <%# end %>
+  <% @my_friends.each do |friend| %>
+    <h4><%= friend.name %></h4>
+    <p><%= friend.price %></p>
+    <p><%= friend.address %></p>
   <% end %>
   <%= link_to "add ton poto" , new_friend_path %>
   <div id="bookings">
