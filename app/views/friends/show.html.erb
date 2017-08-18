@@ -30,7 +30,11 @@
 
   <div class="col-md-4" id="friends_mid">
   <h1><%= @friend.name%>'s profile</h1>
+  <% if @friend.avatar_x.nil? %>
+  <img src="http://bigpicturesb.net/wp-content/uploads/2011/11/generic-profile-pic.png">
+  <% else %>
     <img src="<%= cl_image_path @friend.avatar_x %>">
+    <% end %>
   </div>
   <div class="col-md-4" id="friends_right">
     <div id="price">
