@@ -4,7 +4,12 @@ class AccountsController < ApplicationController
   def show
     if user_signed_in?
       @my_bookings = Booking.where(user_id: current_user.id)
-      @others_bookings = Booking.joins(:friend).where(user_id: current_user)
+      friends = Friend.where(user_id: current_user.id)
+      @others_bookings = []
+      friends.each do |friend|
+        @others_bookings << Booking.where(friend_id: friend.id)
+      end
+      #Booking.where(user_id: current_user)
     end
   end
 
@@ -14,6 +19,3 @@ class AccountsController < ApplicationController
     @account_id = current_user
   end
 end
-
-
-#Client.joins(:orders).where(orders: { created_at: time_range })
