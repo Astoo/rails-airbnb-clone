@@ -7,23 +7,23 @@
 <% if i > 0 %>
 <% rating = rating/i %>
 <% end %>
-
-
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-    <div class="card-name">
-      <h4><%= link_to friend.name, friend_path(friend) %></h4>
-      <p> owned by <%= friend.user.name%></p>
-    </div>
-    <div class="card-description">
-      <p><%=friend.price%></p>
-    </div>
-    <div class="card-user">
-      <% if friend.avatar != nil %>
-        <% if friend.avatar.path != nil %>
-          <%= cl_image_tag friend.avatar.path %>
-        <% elsif friend.avatar_x != nil %>
-          <%= image_tag friend.avatar_x %>
-        <% end %>
+<%= link_to friend_path(friend) do %>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('<%= cl_image_path @friend.avatar_x.path, height: 300, width: 400, crop: :fill %>')">
+  <div class="card-name">
+    <h4><%= link_to friend.name, friend_path(friend) %></h4>
+    <p> owned by <%= friend.user.name%></p>
+  </div>
+  <div class="card-description">
+    <p><%=friend.price%></p>
+  </div>
+  <div class="card-user">
+    <% if friend.avatar != nil %>
+      <% if friend.avatar.path != nil %>
+        <%= cl_image_tag friend.avatar.path %>
+      <% elsif friend.avatar_x != nil %>
+        <%= image_tag friend.avatar_x %>
+      <% end %>
       <% end %>
     </div>
     <div class="card-distance">
@@ -37,4 +37,5 @@
     </div>
     <a class="card-link" href="<%= friend_path(friend)%>" ></a>
   </div>
+  <%end%>
 
