@@ -30,7 +30,7 @@
 
   <div class="col-md-4" id="friends_mid">
   <h1><%= @friend.name%>'s profile</h1>
-    <img src="http://enorme.tv/uploads/articles/695/beauf-de-france.jpg" >
+    <img src="<%= cl_image_path @friend.avatar_x %>">
   </div>
   <div class="col-md-4" id="friends_right">
     <div id="price">
