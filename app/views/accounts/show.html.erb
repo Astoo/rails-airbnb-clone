@@ -1,7 +1,7 @@
 <div id="dashboard">
   <div class="col-md-3" id="profilebar">
     <div id="profile">
-    <% if current_user.avatar.path != nil %>
+    <% if current_user.avatar != nil %>
       <% path = current_user.avatar.path.sub(/v1\d*/, 'w_300,h_300,c_thumb,r_max') %>
       <%= cl_image_tag path %>
     <% elsif current_user.facebook_picture_url != nil %>
@@ -16,14 +16,14 @@
     <%= link_to "edit profile", edit_user_registration_path %>
   </div>
   <div id="friendcards">
-  <%Friend.all.where(user_id: current_user.id) do |friend| %>
+  <% if @my_friends.empty? %>
+  <p> you do not have any poto's yet. <%= link_to "add ton poto" , new_friend_path %> </p>
+  <%else%>
+  <% @my_friends.each do |friend| %>
   <%= render "friends/card", friend: friend %>
   <% end %>
-  <% @my_friends.each do |friend| %>
-    <h4><%= friend.name %></h4>
-    <p><%= friend.price %></p>
-    <p><%= friend.address %></p>
-  <% end %>
+  <%end%>
+
   <%= link_to "add ton poto" , new_friend_path %>
   <div id="bookings">
   <% if @my_bookings.empty? && @others_bookings.empty? %>
