@@ -2,7 +2,18 @@
   <div id="mapbar">
   <div id="map" style="width: 100%; height: 600px;"></div>
   <div id="searchfine">
-  search
+   <%= simple_form_for :search, url: friends_path, method: :get, class: "form-horizontal" do |f| %>
+    <div class="col-md-12">
+      <%= f.input :city, placeholder: "City" , label: false %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :activity_id, collection: Activity.all, prompt: "usage of the friend" , label: false %>
+    </div>
+    <div class="col-md-6">
+      <%= f.submit type: 'submit', class: "btn btn-block" do %>
+      <% end %>
+    </div>
+    <%end%>
   </div>
   </div>
   <div class="container">
