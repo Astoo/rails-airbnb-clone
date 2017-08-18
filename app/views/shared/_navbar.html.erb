@@ -14,7 +14,8 @@
         <div class="dropdown">
           <% if current_user.avatar != nil %>
             <% if current_user.avatar.path != nil %>
-              <%= cl_image_tag current_user.avatar.path %>
+              <% path = current_user.avatar.path.sub(/v\d*/, 'w_30,h_30,c_thumb,r_max') %>
+              <%= cl_image_tag path, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
             <% end %>
           <% elsif current_user.facebook_picture_url != nil %>
             <% avatar_url = current_user.facebook_picture_url || "http://placehold.it/30x30" %>
