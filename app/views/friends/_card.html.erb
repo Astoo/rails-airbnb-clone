@@ -15,7 +15,7 @@
     <p> owned by <%= friend.user.name%></p>
   </div>
   <div class="card-description">
-    <p><%=friend.price%></p>
+    <p><%=friend.price%> £</p>
   </div>
   <div class="card-user">
     <% if friend.avatar != nil %>
@@ -31,7 +31,7 @@
     </div>
     <div class="card-rating">
       <% if rating > 0 %>
-        <%= rating %>
+        <P>rating : <%= rating %></P>
       <% end %>
       <!-- mettre un else plus tard pour griser les étoiles  -->
     </div>
