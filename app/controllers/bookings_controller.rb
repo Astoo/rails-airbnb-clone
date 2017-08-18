@@ -34,10 +34,14 @@ class BookingsController < ApplicationController
 
   def accept_booking
     @booking.status = "accepted"
+    @booking.save
+    redirect_to account_path(current_user)
   end
 
   def reject_booking
     @booking.status = "rejected"
+    @booking.save
+    redirect_to account_path(current_user)
   end
 
   private
