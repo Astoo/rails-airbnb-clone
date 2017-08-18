@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'accounts/show'
+  #get 'accounts/show'
+  post 'accept_booking', to: 'bookings#accept_booking'
+  post 'reject_booking', to: 'bookings#reject_booking'
+
 
   resources :friends, except: :edit do
     resources :reviews, only: :create
@@ -10,9 +13,6 @@ Rails.application.routes.draw do
   resources :accounts, only: :show do
     resources :friends, only: [:new]
   end
-
-  post 'accept_booking', to: 'bookings#accept_booking'
-  post 'reject_booking', to: 'bookings#reject_booking'
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
