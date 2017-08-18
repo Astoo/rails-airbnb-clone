@@ -20,7 +20,7 @@
   width:350px;
   height:auto;
   border-radius: 50%;
-  box-shadow: 0px 0px 141px -36px $white;
+  box-shadow: 0px 0px 141px -36px $grey;
   position: relative;
   top:12vh;
 }
@@ -28,7 +28,7 @@
   background-color: $white;
   justify-content:center;
   margin:0px !important;
-  color: $lightdark;
+  color: $blue;
   border-radius:4px;
   padding: 20px;
   margin-top: 50px !important;
@@ -39,7 +39,7 @@
   background-color: $white;
   justify-content:center;
   margin-top:12vh !important;
-  color: $lightdark;
+  color: $grey;
   border-radius:4px;
   padding: 20px;
 }
@@ -49,14 +49,14 @@ background-image: url(https://pbs.twimg.com/media/CaXIxQGUEAA1PMU.jpg);
  font-weight: bold;
   background-color: $white;
   justify-content:center;
-  color: $white;
+  color: $grey;
   border-radius:4px;
   padding: 20px;
   height:150px;
 }
 #review{
   border-bottom-style: solid;
-  color: $white;
+  color: $grey;
   position:relative;
   top:10vh;
   margin-top:5px;
