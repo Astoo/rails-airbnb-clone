@@ -1,19 +1,19 @@
 body{
-  color:$white;
+  color:$blue;
   margin-bottom:0;
 }
 body a{
-  color:$white;
+  color:$grey;
   opacity:0.7;
 }
 body a:hover{
-  color:$white;
-  opacity:1;
+  color:$grey;
+  opacity:0.5;
   text-decoration: none;
 }
 
 input{
-  background-color: $dark;
+  background-color: $grey;
   opacity:1;
   border:none;
   padding:10px;
@@ -29,7 +29,7 @@ input:hover{
   text-align: center;
   vertical-align: center;
   justify-content:center;
-  color:$white;
+  color:$grey;
 }
 .banner{
   background-position: center;
@@ -43,7 +43,9 @@ input:hover{
   display: flex;
 
 
-
+h1{
+  color:$grey;
+}
 
 }
 .info-box{
@@ -62,5 +64,5 @@ input:hover{
 }
 
 body {
-  background-color:$lightdark;
+  background-color:$white;
 }
